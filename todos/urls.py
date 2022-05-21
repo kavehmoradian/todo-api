@@ -1,12 +1,11 @@
 from django.urls import path
+from .views import TaskList, TaskDetail,AddTask
 
 app_name = 'todo'
 
 urlpatterns = [
     #path('', api_docs, name='api_docs'),
-    #path('tasks/', tasks_list, name='tasks_list'),
-    #path('task-detail/<pk>/', tasks_detail, name='tasks_detail'),
-    #path('add-task/', new_task, name="new_task"),
-    #path('edit-task/<pk>/', edit_task, name="edit_task"),
-    #path('delete-task/<pk>/', delete_task, name="delete_task"),
+    path('tasks/', TaskList.as_view(), name='tasks_list'),
+    path('task-detail/<pk>/', TaskDetail.as_view(), name='tasks_detail'),
+    path('add-task/', AddTask.as_view(), name="new_task"),
 ]
